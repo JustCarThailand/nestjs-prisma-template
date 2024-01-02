@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:15.3
+    container_name: nestjs-prisma-network-db-local
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - nestjs-prisma-network
+    stdin_open: true
+    tty: true
+    ports:
+      - 5411:5411
+    volumes:
+      - nestjs-prisma-template:/var/lib/postgresql/data
+
+networks:
+  nestjs-prisma-network:
+    name: nestjs-prisma-network
+    driver: bridge
+
+volumes:
+  nestjs-prisma-template:
