@@ -4,7 +4,7 @@ services:
     container_name: nestjs-prisma-network-db-local
     restart: always
     env_file:
-      - .env
+      - .env.database
     networks:
       - nestjs-prisma-network
     stdin_open: true
