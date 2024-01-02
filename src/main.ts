@@ -45,12 +45,6 @@ async function bootstrap() {
       ],
     }),
   });
-  app.setGlobalPrefix('v1', {
-    exclude: [
-      { path: 'health', method: RequestMethod.GET },
-      { path: 'metrics', method: RequestMethod.GET },
-    ],
-  });
 
   app.useGlobalPipes(
     new ValidationPipe({
